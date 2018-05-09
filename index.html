@@ -8,8 +8,23 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <script src="jquery.flip.min.js"></script>
     <script>
+      $(window).scroll(function (event) {
+        var scroll = $(window).scrollTop();
+        var navbar = $("nav");
+        if(scroll > 100){
+          if(!navbar.hasClass("nav-fixed")){
+            navbar.addClass("nav-fixed");
+          }
+        }
+        else{
+          if(navbar.hasClass("nav-fixed")){
+            navbar.removeClass("nav-fixed");
+          }
+        }
+      });
       $(function(){
         $("#image-1, #image-2, #image-3, #image-4").flip({
           trigger: 'hover'
@@ -32,20 +47,56 @@
           }
         }
       });
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
     </script>
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">FitnessTime</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">FEATURES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">OUR TEAM</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">GALLERY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">PRICING</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">PARTNERS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">CONTACT</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <div id="banner">
-      <p class="number-banner">1-800-555-1234</p>
+      <p class="phone-container">1-800-555-1234</p>
       <div class="banner-text">
-        <h6>LANDING PAGE TEMPLATE</h6>
-        <h1>PERFECT FITNESS SOLUTION</h1>
-        <h4>BEST CHOICE FOR YOUR SITE</h4>
+        <h4 class="title-1">Landing Page Template</h4>
+        <h2 class="title-2">PERFECT FITNESS SOLUTION</h2>
+        <h4 class="title-3">BEST CHOICE FOR YOUR SITE</h4>
       </div>
     </div>
+    <br>
     <div class="text-center">
       <h1>WELCOME TO FITNESS<span class="text-red">TIME!</span></h1>
-      <p class="sub-title">Take carre of your body. It's the only place you have to live.</p>
+      <p class="banner-subtitle">Take carre of your body. It's the only place you have to live.</p>
     </div>
     <table class="table text-center table-descriptions">
       <tr>
@@ -176,6 +227,59 @@
       </div>
     </div>
     <br>
+    <br>
+    <section id="pricing" class="text-center pt-5">
+      <h1 class="main-title">PRICING AND PLANS</h1>
+      <br>
+      <div class="flex-container">
+        <div class="row pricing-item">
+          <div class="col-sm-12 col-md-4">
+            <i class="fas fa-pencil-alt"></i>
+            <h5>STANDARD</h5>
+            <h4>$33.33</h4>
+          </div>
+          <div class="col-sm-12 col-md-8 bl-separator">
+            <ul class="text-left">
+              <li>Item 1</li>
+              <li>Item 2</li>
+              <li>Item 3</li>
+              <li>Item 4</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row pricing-item">
+          <div class="col-sm-12 col-md-4">
+            <i class="fas fa-pencil-alt"></i>
+            <h5>ADVANCED</h5>
+            <h4>$33.33</h4>
+          </div>
+          <div class="col-sm-12 col-md-8 bl-separator">
+            <ul class="text-left">
+              <li>Item 1</li>
+              <li>Item 2</li>
+              <li>Item 3</li>
+              <li>Item 4</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row pricing-item">
+          <div class="col-sm-12 col-md-4">
+            <i class="fas fa-pencil-alt"></i>
+            <h5>BUSINESS</h5>
+            <h4>$33.33</h4>
+          </div>
+          <div class="col-sm-12 col-md-8 bl-separator">
+            <ul class="text-left">
+              <li>Item 1</li>
+              <li>Item 2</li>
+              <li>Item 3</li>
+              <li>Item 4</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br>
     <div class="text-center">
       <h1>PARTNERS</h1>
     </div>
@@ -208,5 +312,47 @@
         </td>
       </tr>
     </table>
+    <footer>
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sagittis erat a pretium porta. Suspendisse eget pretium turpis. Phasellus id porttitor metus, id pharetra nunc. Pellentesque ultricies auctor orci, posuere hendrerit mauris eleifend tincidunt. Morbi in risus a magna porta consectetur.
+      </div>
+      <hr>
+      <br>
+      <div class="row">
+        <div class="col-sm-12 col-md-3">
+          <h5>CONTACT INFO</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="col-sm-12 col-md-9">
+          <h5>SEND US A MESSAGE</h5>
+          <form action="#" class="container-fluid">
+            <div class="row">
+              <div class="col-sm-12 col-md-4">
+                <input type="text" placeholder="Name" class="form-control">
+              </div>
+              <div class="col-sm-12 col-md-4">
+                <input type="text" placeholder="Email" class="form-control">
+              </div>
+              <div class="col-sm-12 col-md-4">
+                <input type="text" placeholder="Subject" class="form-control">
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-sm-12 col-md-8">
+                <textarea class="container-fluid form-control" name="message" placeholder="Your message..."></textarea>
+              </div>                        
+              <div class="col-sm-4">
+                <button class="btn btn-submit" type="submit">Submit Your Message</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <p onclick="topFunction()" id="top-bottom" class="to-right">Back to top</p>
+    </footer>
   </body>
 </html>
